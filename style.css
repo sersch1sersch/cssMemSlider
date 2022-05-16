@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2? family= Lobster & display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --slider-color: #161615d7;
+    --button-hover: #3203cc;
+    --text-button-color: #ffffff;
+    --hover-color: #0cb9ee;
+    --active-color: #6e5ff8;
+}
+body {
+    font-family: 'Lobster', cursive;
+    font-size: 2rem;
+    color: var(--button-hover);
+}
+.my-clider {
+    width: 50vw;
+    margin: 0 auto;
+}
+.my-clider-main {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.slider {
+    width: 50vw;
+    background-color: var(--slider-color);
+    overflow: hidden;
+}
+.slider-container {
+    width: 45vw;
+    height: 25.3vw;
+    margin: 1.5rem 2.5vw 0 2.5vw;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+.sliders {
+    transition: all 0.6s ease;
+}
+.sliders img {
+    width: 45vw;
+    margin-right: 4vw;
+    border-radius: 1rem;
+}
+#check-radio1:checked~.slider .sliders-img {
+    margin-left: 0vw;
+}
+#check-radio2:checked~.slider .sliders-img {
+    margin-left: -49vw;
+}
+#check-radio3:checked~.slider .sliders-img {
+    margin-left: -98vw;
+}
+#check-radio4:checked~.slider .sliders-img {
+    margin-left: -147vw;
+}
+#check-radio1:checked~.container-titles .check-bar .button1{
+    background-color: var(--button-hover);
+    opacity: 1;
+    transform: scale(1.1);
+}
+#check-radio2:checked~.container-titles .check-bar .button2{
+    background-color: var(--button-hover);
+    opacity: 1;
+    transform: scale(1.1);
+}
+#check-radio3:checked~.container-titles .check-bar .button3{
+    background-color: var(--button-hover);
+    opacity: 1;
+    transform: scale(1.1);
+}
+#check-radio4:checked~.container-titles .check-bar .button4 {
+    background-color: var(--button-hover);
+    opacity: 1;
+    transform: scale(1.1);
+}
+.container-titles {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 45vw;
+    height: 5rem;
+    padding: 2.5rem 2.5vw 0 2.5vw;
+    background-color: var(--slider-color);
+    overflow: hidden;
+}
+.texts {
+    opacity: 0;
+    color: var(--text-button-color);
+    font-size: 0.8em;
+    transition-property: margin-top, opacity, transform;
+    transition-duration: 0.6s;
+    margin-bottom: 3rem;
+}
+#check-radio1:checked~.container-titles .text1 {
+    opacity: 1;
+    animation:scale-in-center .5s cubic-bezier(.25,.46,.45,.94) both
+}
+#check-radio1:checked~.container-titles .text4 {
+    opacity: 0;
+    transform: scale(0.5);
+}
+#check-radio2:checked~.container-titles .text1 {
+    margin-top: -5.3rem;
+    opacity: 0;
+    transform: scale(0.5);
+}
+#check-radio2:checked~.container-titles .text2 {
+    opacity: 1;
+    animation:scale-in-center .5s cubic-bezier(.25,.46,.45,.94) both
+}
+#check-radio3:checked~.container-titles .text1 {
+    margin-top: -10.8rem;
+    opacity: 0;
+}
+#check-radio3:checked~.container-titles .text2 {
+    opacity: 0;
+    transform: scale(0.5);
+}
+#check-radio3:checked~.container-titles .text3 {
+    opacity: 1;
+    animation:scale-in-center .5s cubic-bezier(.25,.46,.45,.94) both
+}
+#check-radio4:checked~.container-titles .text1 {
+    margin-top: -15.9rem;
+    opacity: 0;
+}
+#check-radio4:checked~.container-titles .text3 {
+    opacity: 0;
+    transform: scale(0.5);
+}
+#check-radio4:checked~.container-titles .text4 {
+    opacity: 1;
+    animation:scale-in-center .5s cubic-bezier(.25,.46,.45,.94) both
+}
+@keyframes scale-in-center{0%{transform:scale(0);opacity:1}100%{transform:scale(1);opacity:1}}
+input[name="radio"] {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+.check-bar {
+    display: flex;
+}
+.button {
+    height: 1.1rem;
+    width: 2.5vw;
+    cursor: pointer;
+    margin: 0.3rem;
+    background-color: var(--text-button-color);
+    border-radius: 0.9rem;
+    background-clip: padding-box;
+    border: 0.4rem solid transparent;
+    transition: all 0.5s ease;
+    opacity: 0.5;
+}
+.button:last-child {
+    margin-right: 0;
+}
+.button:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.1);
+    opacity: 0.7;
+}
+.button:active {
+    background-color: var(--active-color);
+}
+@media (max-width: 1450px) {
+    .my-clider {
+        width: 80vw;
+    }
+    .button {
+        height: 1.3rem;
+        border-radius: 1.9rem;
+    }
+    .slider {
+        width: 80vw;
+    }
+    .slider-container {
+        width: 75vw;
+        height: 42.2vw;
+    }
+    .sliders img {
+        width: 75vw;
+    }
+    .container-titles {
+        width: 75vw;
+        height: 5rem;
+        padding: 2.5rem 2.5vw 0 2.5vw;
+    }
+    #check-radio1:checked~.slider .sliders-img {
+        margin-left: 0vw;
+    }
+    #check-radio2:checked~.slider .sliders-img {
+        margin-left: -79vw;
+    }
+    #check-radio3:checked~.slider .sliders-img {
+        margin-left: -158vw;
+    }
+    #check-radio4:checked~.slider .sliders-img {
+        margin-left: -237vw;
+    }
+}
+@media (max-width: 767px) {
+    .my-clider {
+        width: 96vw;
+    }
+    .button {
+        height: 1.1rem;
+        border-radius: 0.9rem;
+    }
+    .slider {
+        width: 96vw;
+    }
+    .slider-container {
+        width: 91vw;
+        height: 51.2vw;
+    }
+    .sliders img {
+        width: 91vw;
+    }
+    .container-titles {
+        width: 91vw;
+        height: 6rem;
+        display: flex;
+        flex-direction: column;
+    }
+    #check-radio1:checked~.slider .sliders-img {
+        margin-left: 0vw;
+    }
+    #check-radio2:checked~.slider .sliders-img {
+        margin-left: -95vw;
+    }
+    #check-radio3:checked~.slider .sliders-img {
+        margin-left: -190vw;
+    }
+    #check-radio4:checked~.slider .sliders-img {
+        margin-left: -285vw;
+    }
+    .check-bar {
+        order: -1;
+        align-self: center;
+    }
+    .text {
+        margin-top: 0.3rem;
+    }
+}
+@media (max-width: 530px) {
+    body {
+        font-size: 1.5rem;
+    }
+    .button {
+        height: 0.8rem;
+        border-radius: 0.9rem;
+    }
+    #check-radio2:checked~.container-titles .text1 {
+        margin-top: -4.7rem;
+    }
+    #check-radio3:checked~.container-titles .text1 {
+        margin-top: -9.4rem;
+    }
+    #check-radio4:checked~.container-titles .text1 {
+        margin-top: -14.2rem;
+    }
+}
+@media (max-width: 362px) {
+    #check-radio2:checked~.container-titles .text1 {
+        margin-top: -4.6rem;
+    }
+    #check-radio3:checked~.container-titles .text1 {
+        margin-top: -11rem;
+    }
+    #check-radio4:checked~.container-titles .text1 {
+        margin-top: -16rem;
+    }
+}
